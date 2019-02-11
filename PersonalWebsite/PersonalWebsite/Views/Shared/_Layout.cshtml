@@ -1,0 +1,668 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<!---This work by Samaksh Gollen is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+    Copyright 2018 Samaksh Gollen. The css is displayed to demonstrate my skills in web Development (not fully polished i.e need : hide css, no inline style,tweeks in jquery etc) -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Montserrat;
+            line-height: 1.8;
+            color: #818181;
+        }
+
+        .container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        .container1 {
+            text-align: center;
+            position: relative;
+            padding: 1px 20px 0px 1px;
+        }
+
+        .container-fluid {
+            padding: 60px 60px;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: bolder;
+            padding-bottom: 250px;
+            text-align: center;
+            color: #fff;
+            font-family: lato;
+            text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+        }
+
+        h3 {
+            font-size: 20px;
+            line-height: 1.375em;
+            color: #303030;
+            font-weight: 500;
+            font-family: Montserrat;
+            text-align: justify;
+        }
+
+        h4 {
+            font-size: 16px;
+            line-height: 1.375em;
+            color: #303030;
+            font-weight: 400;
+            font-family: Montserrat;
+            margin-bottom: 30px;
+        }
+
+        h5 {
+            font-size: 8px;
+            line-height: 1.375em;
+            color: #303030;
+            font-weight: 600;
+            font-family: Montserrat;
+            margin-bottom: 30px;
+        }
+
+        .logo-small {
+            color: #3D9970;
+            font-size: 50px;
+        }
+
+            .logo-small:hover {
+                color: white;
+                cursor: pointer;
+                text-shadow: -2px 0 #3D9970, 0 2px #3D9970, 2px 0 #3D9970, 0 -2px #3D9970;
+            }
+
+        .logo {
+            color: #3D9970;
+            font-size: 200px;
+        }
+
+        .inner-addon {
+            position: relative;
+        }
+
+            .inner-addon .glyphicon {
+                position: absolute;
+                padding: 10px;
+                pointer-events: none;
+            }
+
+        .left-addon .glyphicon {
+            left: 0px;
+        }
+
+        .right-addon .glyphicon {
+            right: 200px;
+        }
+
+        .left-addon input {
+            padding-left: 30px;
+        }
+
+        .right-addon input {
+            padding-right: 30px;
+        }
+
+        .allign {
+            padding-left: 30px;
+        }
+
+        .carousel-control.right, .carousel-control.left {
+            background-image: none;
+            color: #3D9970;
+        }
+
+        .carousel-indicators li {
+            border-color: #3D9970;
+        }
+
+        .carousel-item {
+            height: 400px;
+            overflow: hidden;
+            width: 75%;
+        }
+
+        .carousel-indicators li.active {
+            background-color: #3D9970;
+        }
+
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            font-family: Montserrat;
+            margin: 70px 0;
+        }
+
+        .item span {
+            font-style: normal;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #3D9970;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: sans-serif;
+            box-shadow: 0 4px 16px 0 rgba(0,0,0,0.24), 0 4px 4px 0 rgba(0,0,0,0.19);
+        }
+
+            .navbar li a, .navbar .navbar-brand {
+                color: #fff !important;
+                background-color: transparent;
+            }
+
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #3D9970 !important;
+            background-color: #fff !important;
+            box-shadow: 0 4px 16px 0 rgba(0,0,0,0.24), 0 4px 4px 0 rgba(0,0,0,0.19);
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: ##3D9970 !important;
+        }
+
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .person {
+            margin-bottom: 25px;
+            width: 350px;
+            height: 400px;
+        }
+
+        .contact1 {
+            color: #3D9970 !important;
+        }
+
+        .p2 {
+            font-size: 25px;
+            text-align: center;
+            color: #fff;
+            font-weight: bolder;
+            font-family: lato;
+            text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+        }
+
+        .heading {
+            font-size: 30px;
+            font-weight: bolder;
+            text-transform: uppercase;
+            font-family: Montserrat;
+            color: #303030;
+            margin-bottom: 30px;
+        }
+
+        .line {
+            position: relative;
+            left: 660px;
+            bottom: 45px;
+            width: 75px;
+            height: 1px;
+            text-align: center;
+            border-bottom: 3px solid #3D9970;
+        }
+
+        .line2 {
+            position: relative;
+            left: 660px;
+            bottom: 15px;
+            width: 75px;
+            height: 1px;
+            text-align: center;
+            border-bottom: 3px solid #3D9970;
+        }
+
+        .line3 {
+            position: relative;
+            left: 720px;
+            bottom: 80px;
+            width: 75px;
+            height: 1px;
+            text-align: center;
+            border-bottom: 3px solid #3D9970;
+        }
+
+        .outline {
+            outline: none;
+            background: transparent;
+            box-shadow: none;
+            border: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid #3D9970;
+        }
+
+            .outline:hover:active:focus, input:focus {
+                outline: none;
+                background: transparent !important;
+                box-shadow: none !important;
+            }
+
+        textarea:focus, input:focus {
+            outline: none;
+            background: transparent !important;
+            box-shadow: none !important;
+        }
+
+        .slideanim {
+            visibility: hidden;
+        }
+
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @@keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @@-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+
+        @@media screen and (max-width: 768px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+        }
+
+        .btn-lg {
+            margin-bottom: 35px;
+            background-color: #3D9970;
+            color: white;
+            font-size: 16px;
+            border: 2px solid #3D9970;
+            text-align: center;
+            font-family: Montserrat;
+            border-radius: 20px;
+            border: none;
+            position: relative;
+        }
+
+            .btn-lg:hover {
+                background-color: #306849;
+                color: white;
+                border: 2px solid #306849;
+                font-size: 16px;
+                box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+                position: relative;
+                outline: none;
+            }
+
+            .btn-lg:active:focus {
+                background-color: white;
+                color: #3D9970;
+                font-size: 16px;
+                outline: none;
+                border: 2px solid #3D9970;
+                position: relative;
+                box-shadow: none;
+            }
+
+            .btn-lg:focus {
+                background-color: #306849;
+                color: white;
+                font-size: 16px;
+                outline: none;
+            }
+
+        .btn-lg1 {
+            margin-bottom: 35px;
+            background-color: #3D9970;
+            color: white;
+            font-family: Montserrat;
+            font-size: 16px;
+            border: 2px solid #3D9970;
+            text-align: center;
+            border-radius: 20px;
+            position: relative;
+        }
+
+            .btn-lg1:hover {
+                background-color: #306849;
+                color: white;
+                border: 2px solid #306849;
+                font-size: 16px;
+                position: relative;
+                outline: none;
+            }
+
+            .btn-lg1:active:focus {
+                background-color: white;
+                color: #3D9970;
+                font-size: 16px;
+                outline: none;
+                border: 2px solid #3D9970;
+                position: relative;
+                box-shadow: none;
+            }
+
+            .btn-lg1:focus {
+                background-color: #306849;
+                border: 2px solid #306849;
+                color: white;
+                font-size: 16px;
+                outline: none;
+            }
+
+        @@media screen and (max-width: 480px) {
+            .logo {
+                font-size: 150px;
+            }
+
+            h3 {
+                font-size: 8px
+            }
+        }
+    </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container1">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#myPage">
+                    <img src="~/Content/images/logo.jpeg" alt="LOGO" href="#myPage" style="padding-top:4px;" width="60" height="43" />
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#myPage">HOME</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#services">SERVICES</a></li>
+                    <li><a href="#portfolio">PORTFOLIO</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="text-center">
+        <img src="~/Content/images/bird7.jpeg" alt="MY TITLE" style="width:100%; height:600px; opacity:0.9;">
+        <div class="centered">
+            <div>
+                <div class="p2">Hello, This is Samaksh</div>
+                <h1>COMPUTER SCIENCE UNDERGRADUATE</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container (About Section) -->
+    <div id="about" class="container-fluid">
+        <div>
+            <h2 class="heading text-center">ABOUT ME</h2><br>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-6">
+                <h3>
+                    Hello Adventurer, you have stumbled across the personal website of Samaksh Gollen,
+                    a University of Waterloo undergrad with bachelor's in Computer Science and a strong
+                    foundation for application development. A foundation that was build through 4 years
+                    of academic experience and by working on various personal and academic projects.
+                    While I am a full stack developer at heart, my expertise is in database management, building
+                    scalable backend services such as APIs, responsive front-end design, and client-side scripts.
+                    <br /> <br />
+
+                    I love building things. While hard engineering problems are often intrinsically fun to tackle.
+                    I am most attracted to solving real customer problems with a business justification. Currently, I am looking
+                    for a junior contributor role where, I will work on developing and managing highly dynamic applications,
+                    and where I will have an unprecedented opportunity for personal and professional development.
+                </h3>
+                <br>
+                <a href="#contact" class="btn btn-default btn-lg" style="font-size:16px;position:absolute"> Hire Me </a>
+                <br />
+            </div>
+            <div class="col-sm-1">
+            </div>
+
+            <div class="col-sm-4">
+                <img src="~/Content/images/bird10.jpeg" class="img-rounded" alt="Samaksh_Gollen" height="450" width="320">
+            </div>
+        </div>
+    </div>
+    <!-- Container (Services Section) -->
+    <div id="services" class="container-fluid text-center">
+        <div>
+            <h2 class="heading text-center"> MY SKILLS & SERVICES</h2>
+        </div>
+        <h4>What I offer</h4>
+        <br />
+        <br />
+        <br />
+        <div class="row slideanim">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-wrench logo-small circle" data-toggle="collapse" data-target="#data"></span>
+                <h4> <b>Web</b> Development </h4>
+                <div id="data" class="collapse">
+                    <ul class="liskill">
+                        <li>
+                            HTML5, CSS3, ASP.NET MVC,<br />
+                            JavaScript, RESTful Web API <br />
+                            MySQL, Bootstrap
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-phone logo-small circle" data-toggle="collapse" data-target="#data1"></span>
+                <h4> <b>Android</b> Developemnt</h4>
+                <div id="data1" class="collapse">
+                    <ul class="liskill">
+                        <li>
+                            Android Studio App Development: Java
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-transfer logo-small circle" data-toggle="collapse" data-target="#data2"></span>
+                <h4>Relational<b> Database</b></h4>
+                <div id="data2" class="collapse">
+                    <ul class="liskill">
+                        <li>
+                            Microsoft SQL Server, IBM DB2, MySQL
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row slideanim">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-blackboard logo-small circle" data-toggle="collapse" data-target="#data3"></span>
+                <h4><b>Software</b> Development</h4>
+                <div id="data3" class="collapse">
+                    <ul class="liskill">
+                        <li>
+                            Java, C++, C#, Python<br />
+                            Embedded SQL with C
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-tasks logo-small circle" data-toggle="collapse" data-target="#data4"></span>
+                <h4>Web <b>Sever & Deployment</b></h4>
+                <div id="data4" class="collapse">
+                    <ul class="liskill">
+                        <li>
+                            Web Server: Microsoft IIS<br />
+                            Web Deployment: Microsoft Azure
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-save logo-small circle" data-toggle="collapse" data-target="#data5"></span>
+                <h4 style="color:#303030;">Version <b>Control</b></h4>
+                <div id="data5" class="collapse">
+                    <ul class="liskill">
+                        <li>
+                            Git
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div>
+        <div id="portfolio" class="container-fluid bg-grey">
+            <h2 class="heading text-center">PORTFOLIO</h2>
+        </div>
+        <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" style="width:68%;margin:auto" role="listbox">
+                <div class="item active">
+                    <h4>
+                        <b style="font-size:30px">YouTube API/Search</b> <br /> <br />
+                        Worked with APIs to develop an interactive application with dynamic layout and custom control/widgets.
+                        The application uses the YouTube API to asynchronously retrieve top 25 search results on YouTube and
+                        displays the retrieved videos in grid or list format. Users can then rate, filter and save  the videos.<br /> <br /> <br />
+                        <a href="https://github.com/sgollen/YouTube-API" target="_blank" class="btn btn-default btn-lg1" style="font-size:16px"> View Work </a>
+                        <br /> <br />
+                    </h4>
+                </div>
+                <div class="item">
+                    <h4>
+                        <b style="font-size:30px;">Socket Programming</b> <br /> <br />
+                        Designed a TCP and UDP socket programming application in a client-server environment.
+                        The application negotiates using TCP sockets and implements G0-Back-N protocol to transfer
+                        multiple files from one host to another host across an unreliable network.<br /> <br /> <br />
+                        <a href="https://github.com/sgollen/TCP-UDP_Socket-Programming" target="_blank" class="btn btn-default btn-lg1" style="font-size:16px"> View Work </a>
+                        <br /> <br />
+                    </h4>
+                </div>
+                <div class="item">
+                    <h4>
+                        <b style="font-size:30px">Relational Database Create/Search/Update</b> <br /> <br />
+                        Developed an efficient embedded SQL program with C as the host language in DB2.
+                        The program searches a sophisticated relational database of a public library and
+                        retrieves a list of publication records depending on the input provided, set of primary
+                        and foreign key constraints and output requirements.
+                        <br /> <br /> <br />
+                        <a href="https://github.com/sgollen/EmbededSQL" target="_blank" class="btn btn-default btn-lg1" style="font-size:16px"> View Work </a>
+                        <br /> <br />
+                    </h4>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div>
+        @RenderBody()
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+    </script>
+
+</body>
+</html>

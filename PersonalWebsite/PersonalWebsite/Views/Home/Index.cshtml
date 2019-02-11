@@ -1,0 +1,99 @@
+﻿@model PersonalWebsite.Models.EmailFormModel
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!-- Container (Contact Section) -->
+    <div id="contact" class="container-fluid bg-grey">
+        <div>
+            <h2 class="heading text-center" style=" margin-bottom:5px">GET IN TOUCH</h2>
+        </div>
+        <div class="text-center">
+            <h4>Contact me and I'll get back to you within 24 hours.</h4>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-3">
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <p><span class="glyphicon contact1 glyphicon-map-marker"></span> Waterloo, Canada</p>
+                <p><span class="glyphicon contact1 glyphicon-phone"></span> +1 (289) 400-4215</p>
+                <p><span class="glyphicon contact1 glyphicon-send"></span> samakshgollen@gmail.com</p>
+            </div>
+            <div class="col-sm-1">
+            </div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="col-sm-7 slideanim ">
+                    <div class="row">
+                        <br />
+                        <br />
+                        <br />
+
+                        <div class="col-sm-10 form-group inner-addon left-addon">
+                            <i class="glyphicon contact1 glyphicon-user"></i>
+                            @Html.TextBoxFor(m => m.FromName, "Name", new { @class = "form-control outline", @placeholder = "Name" })
+                            @Html.ValidationMessageFor(m => m.FromName)
+                        </div>
+                        <div class="col-sm-10 form-group inner-addon left-addon">
+                            <i class="glyphicon contact1 glyphicon-send"></i>
+                            @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control outline", @placeholder = "Email" })
+                            @Html.ValidationMessageFor(m => m.FromEmail)
+                        </div>
+                        <div class="col-sm-10 form-group inner-addon left-addon">
+                            <i class="glyphicon contact1 glyphicon-envelope"></i>
+                            @Html.TextAreaFor(m => m.Message, new { @class = "form-control outline", @rows = 5, @placeholder = "    Comment" })
+                            @Html.ValidationMessageFor(m => m.Message)
+                            <br>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-10  form-group">
+                            <input class="btn btn-default btn-lg pull-right" style="position:absolute;font-size:16px" type="submit" value="Send Now" />
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <footer class="container-fluid text-center" style="background-color: #3D9970;">
+        <a href="#myPage" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <br />
+        <br />
+        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+            <img alt="Creative Commons License" class="copyImg" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+        </a>
+        <br />
+        <h5 class="copyright">  This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License </h5>
+        <br />
+    </footer>
+    <script>
+        $(document).scroll(function () {
+            sessionStorage['page'] = document.URL;
+            sessionStorage['scrollTop'] = $(document).scrollTop();
+        });
+        // after dom is loaded
+        $(document).ready(function () {
+            if (sessionStorage['page'] == document.URL) {
+                $(document).scrollTop(sessionStorage['scrollTop']);
+
+            }
+        });
+
+    </script>
+</body>
+</html>
